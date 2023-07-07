@@ -20,9 +20,6 @@ def register():
         return redirect(url_for('home')) # if so - send to home page
     return render_template('register.html', title='Register', form=form)
 
-if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0")
-
 
 @app.route("/update_server", methods=['POST'])
 def webhook():
@@ -33,3 +30,9 @@ def webhook():
         return 'Updated PythonAnywhere successfully', 200
     else:
         return 'Wrong event type', 400
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True, host="0.0.0.0")
+
